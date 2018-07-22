@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+
+    <!--Angular route Libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+</head>
+
+<body>
+
+    <md-toolbar $mdThemingProvider.theme("indigo"") >
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+                <md-icon>cloud_upload</md-icon>
+            </md-button>
+            <h2 style="color:mediumspringgreen;" flex md-truncate>S3 Upload Utility</h2>
+        </div>
+    </md-toolbar>
+
+
+    <!-- Parent Menu Navigation Bar  -->
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/dashboard" ui-sref="dashboard">
+                        <span class="glyphicon glyphicon-home">
+                            </span> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/uploadFile" ui-sref="uploadFile">
+                        <span class="glyphicon glyphicon-share-alt">
+                            </span> Upload Page
+                    </a>
+                </li>
+                <li>
+                    <a href="#/uploadResult" ui-sref="uploadResult">
+                        <span class="glyphicon glyphicon-th-list">
+                            </span> Result Page
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+
+
+    </nav>
+
+    <div id="contentDiv">
+        <div flex="" ui-view="">
+        </div>
+    </div>
+
+</body>
+
+<script src="js/app.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/controller/DashboardController.js"></script>
+<script src="js/controller/UploadController.js"></script>
+<script src="js/controller/ResultController.js"></script>
+</body>
+
+
+</html>
